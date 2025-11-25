@@ -2,8 +2,9 @@
 // ОБЩИЕ ФУНКЦИИ
 // ============================================
 
-// Подключение к вебхуку n8n
+// Подключение к вебхукам n8n
 const WEBHOOK_URL = 'https://alex87ai.ru/webhook/ae892d5f-98e7-4ff2-be54-26b98c9ff636';
+const IMAGE_WEBHOOK_URL = 'https://alex87ai.ru/webhook/9b0bdea6-6f0d-46cd-b90a-ccadbb45c199';
 
 // Получение или создание sessionId
 function getSessionId() {
@@ -449,6 +450,125 @@ document.addEventListener('DOMContentLoaded', () => {
     } finally {
       aiSend.disabled = false;
       aiSend.textContent = 'Отправить';
+    }
+  });
+});
+
+// ============================================
+// AI.assistants.html - генератор изображений
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('ai-image-form');
+  const promptTextarea = document.getElementById('image-prompt');
+  const generateBtn = document.getElementById('generate-image-btn');
+  const buttonText = generateBtn ? generateBtn.querySelector('.button-text') : null;
+  const buttonLoader = generateBtn ? generateBtn.querySelector('.button-loader') : null;
+  const imageResultContainer = document.getElementById('image-result-container');
+  const imageLoading = document.getElementById('image-loading');
+  const generatedImage = document.getElementById('generated-image');
+  const downloadBtn = document.getElementById('download-image-btn');
+  
+  if (!form || !promptTextarea || !generateBtn) return;
+  
+  let currentImageUrl = '';
+  
+  const setLoadingState = (isLoading) => {
+    generateBtn.disabled = isLoading;
+    if (buttonText) {
+      buttonText.style.display = isLoading ? 'none' : 'inline';
+    }
+    if (buttonLoader) {
+      buttonLoader.style.display = isLoading ? 'flex' : 'none';
+    }
+    if (imageLoading) {
+      imageLoading.style.display = isLoading ? 'block' : 'none';
+    }
+  };
+  
+  const hideResult = () => {
+    if (imageResultContainer) {
+      imageResultContainer.style.display = 'none';
+    }
+  };
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const prompt = promptTextarea.value.trim();
+    if (!prompt) {
+      alert('Пожалуйста, введите описание изображения');
+      return;
+    }
+    
+    hideResult();
+    setLoadingState(true);
+    
+    try {
+      const response = await fetch(IMAGE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
+      }
+      
+      const contentType = response.headers.get('content-type') || '';
+      const blob = await response.blob();
+      
+      if (blob.size === 0) {
+        throw new Error('Получен пустой файл');
+      }
+      
+      if (contentType && !contentType.startsWith('image/')) {
+        const text = await blob.text();
+        try {
+          const jsonData = JSON.parse(text);
+          if (jsonData.error || jsonData.message) {
+            throw new Error(jsonData.error || jsonData.message);
+          }
+        } catch (err) {
+          // Ответ не в формате JSON — продолжаем
+        }
+        throw new Error('Получен неверный тип данных. Ожидалось изображение.');
+      }
+      
+      const imageBlob = contentType ? blob : new Blob([blob], { type: 'image/png' });
+      const imageUrl = URL.createObjectURL(imageBlob);
+      
+      if (currentImageUrl) {
+        URL.revokeObjectURL(currentImageUrl);
+      }
+      currentImageUrl = imageUrl;
+      
+      if (generatedImage) {
+        generatedImage.src = imageUrl;
+      }
+      if (imageResultContainer) {
+        imageResultContainer.style.display = 'block';
+      }
+      if (downloadBtn) {
+        downloadBtn.onclick = () => {
+          const a = document.createElement('a');
+          a.href = imageUrl;
+          a.download = `ai-generated-${Date.now()}.png`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        };
+      }
+      
+      if (imageResultContainer) {
+        imageResultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } catch (error) {
+      console.error('Ошибка генерации изображения:', error);
+      alert('Произошла ошибка при генерации изображения. Пожалуйста, попробуйте еще раз.');
+    } finally {
+      setLoadingState(false);
     }
   });
 });

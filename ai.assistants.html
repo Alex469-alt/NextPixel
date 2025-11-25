@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104906448', 'ym');
+
+      ym(104906448, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/104906448" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ИИ ассистенты и чат-боты под ключ | NextPixel - Разработка AI решений</title>
@@ -287,6 +300,63 @@
             <h3>Ведение</h3>
             <p>Поддержка, оптимизация, отчёты по KPI</p>
             <div class="format-price">от 300BYN/мес</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ИИ генератор изображений -->
+    <section class="ai-image-generator-futuristic">
+      <div class="container">
+        <h2 class="ai-image-title">Попробуйте ИИ-генератор изображений</h2>
+        <p class="ai-image-subtitle">Введите описание изображения, которое хотите создать, и наш ИИ-агент сгенерирует его для вас</p>
+        
+        <div class="ai-image-wrapper">
+          <div class="ai-image-form-container">
+            <form id="ai-image-form" class="ai-image-form">
+              <div class="form-group-image">
+                <label for="image-prompt" class="form-label-image">Опишите изображение</label>
+                <textarea 
+                  id="image-prompt" 
+                  name="prompt" 
+                  class="image-textarea"
+                  placeholder="Например: красивый закат над морем, футуристический город, космический корабль..."
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="ai-image-button" id="generate-image-btn">
+                <span class="button-text">Сгенерировать изображение</span>
+                <span class="button-loader" style="display: none;">
+                  <span class="loader-spinner"></span>
+                  <span>Генерация...</span>
+                </span>
+              </button>
+            </form>
+          </div>
+          
+          <div class="ai-image-result-container" id="image-result-container" style="display: none;">
+            <div class="image-result-wrapper">
+              <img id="generated-image" src="" alt="Сгенерированное изображение" class="generated-image" />
+              <button class="image-download-btn" id="download-image-btn" aria-label="Скачать изображение">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/>
+                </svg>
+                Скачать
+              </button>
+            </div>
+          </div>
+          
+          <div class="ai-image-loading" id="image-loading" style="display: none;">
+            <div class="loading-content">
+              <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+              </div>
+              <p class="loading-text">ИИ-агент генерирует ваше изображение...</p>
+              <p class="loading-subtext">Это может занять несколько секунд</p>
+            </div>
           </div>
         </div>
       </div>
