@@ -1144,6 +1144,148 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
+// ФОРМА ДОПОЛНИТЕЛЬНЫХ УСЛУГ
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+  const additionalServicesForm = document.getElementById('additional-services-form');
+  if (!additionalServicesForm) return;
+
+  const serviceSelect = document.getElementById('service-select');
+  const phoneInputForm = document.getElementById('phone-input-form');
+  const privacyCheckboxForm = document.getElementById('privacy-checkbox-form');
+  const serviceError = document.getElementById('service-error');
+  const phoneErrorForm = document.getElementById('phone-error-form');
+  const privacyErrorForm = document.getElementById('privacy-error-form');
+
+  // Валидация номера телефона
+  function validatePhone(phone) {
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 7) {
+      return {
+        valid: false,
+        message: 'Номер телефона должен содержать минимум 7 цифр'
+      };
+    }
+    return {
+      valid: true,
+      message: ''
+    };
+  }
+
+  // Валидация при вводе телефона
+  phoneInputForm.addEventListener('input', function() {
+    const validation = validatePhone(this.value);
+    if (!validation.valid && this.value.length > 0) {
+      phoneErrorForm.textContent = validation.message;
+      this.style.borderColor = 'rgba(255, 68, 68, 0.6)';
+    } else {
+      phoneErrorForm.textContent = '';
+      this.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+    }
+  });
+
+  // Обработчик изменения чекбокса
+  privacyCheckboxForm.addEventListener('change', function() {
+    if (this.checked) {
+      privacyErrorForm.textContent = '';
+    }
+  });
+
+  // Обработчик изменения select
+  serviceSelect.addEventListener('change', function() {
+    if (this.value) {
+      serviceError.textContent = '';
+      this.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+    }
+  });
+
+  // Отправка формы
+  additionalServicesForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const serviceValue = serviceSelect.value.trim();
+    const phoneValue = phoneInputForm.value.trim();
+    let hasErrors = false;
+
+    // Проверка выбора услуги
+    if (!serviceValue) {
+      serviceError.textContent = 'Выберите услугу';
+      serviceError.style.color = 'rgba(255, 68, 68, 0.9)';
+      serviceSelect.style.borderColor = 'rgba(255, 68, 68, 0.6)';
+      hasErrors = true;
+    } else {
+      serviceError.textContent = '';
+      serviceSelect.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+    }
+
+    // Проверка согласия с политикой конфиденциальности
+    if (!privacyCheckboxForm.checked) {
+      privacyErrorForm.textContent = 'Необходимо согласие с политикой конфиденциальности';
+      privacyErrorForm.style.color = 'rgba(255, 68, 68, 0.9)';
+      privacyCheckboxForm.focus();
+      hasErrors = true;
+    } else {
+      privacyErrorForm.textContent = '';
+    }
+
+    // Проверка валидности телефона
+    const validation = validatePhone(phoneValue);
+    if (!validation.valid) {
+      phoneErrorForm.textContent = validation.message;
+      phoneErrorForm.style.color = 'rgba(255, 68, 68, 0.9)';
+      phoneInputForm.style.borderColor = 'rgba(255, 68, 68, 0.6)';
+      phoneInputForm.focus();
+      hasErrors = true;
+    } else {
+      phoneErrorForm.textContent = '';
+      phoneInputForm.style.borderColor = 'rgba(0, 255, 255, 0.3)';
+    }
+
+    if (hasErrors) {
+      return;
+    }
+
+    // Блокируем кнопку отправки
+    const submitButton = additionalServicesForm.querySelector('.submit-button');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
+    try {
+      // Получаем название выбранной услуги
+      const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+
+      // Отправка на вебхук n8n
+      const response = await fetch('https://alex87ai.ru/webhook/8a0139fb-170d-4edd-8999-ddd4b8220117', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone: phoneValue,
+          service: serviceValue,
+          serviceText: serviceText,
+          timestamp: new Date().toISOString(),
+          source: 'Форма дополнительных услуг'
+        })
+      });
+
+      if (response.ok) {
+        // Успешная отправка - редирект на thank-you.html
+        window.location.href = 'thank-you.html?phone=' + encodeURIComponent(phoneValue);
+      } else {
+        throw new Error('Ошибка отправки');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      phoneErrorForm.textContent = 'Произошла ошибка. Попробуйте позже.';
+      phoneErrorForm.style.color = 'rgba(255, 68, 68, 0.9)';
+      submitButton.disabled = false;
+      submitButton.textContent = 'Отправить заявку';
+    }
+  });
+});
+
+// ============================================
 // СЛАЙДЕР СЕРТИФИКАТОВ
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {

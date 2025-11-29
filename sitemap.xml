@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://next-pixel87.vercel.app/index.html</loc>
-    <lastmod>2025-10-25</lastmod>
+    <loc>https://nextpixel.ru/index.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://next-pixel87.vercel.app/website.creation.html</loc>
-    <lastmod>2025-10-25</lastmod>
+    <loc>https://nextpixel.ru/website.creation.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://next-pixel87.vercel.app/ads.html</loc>
-    <lastmod>2025-10-25</lastmod>
+    <loc>https://nextpixel.ru/ads.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://next-pixel87.vercel.app/ai.assistants.html</loc>
-    <lastmod>2025-10-25</lastmod>
+    <loc>https://nextpixel.ru/ai.assistants.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://next-pixel87.vercel.app/blog.html</loc>
-    <lastmod>2025-10-25</lastmod>
+    <loc>https://nextpixel.ru/blog.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextpixel.ru/dop.uslugi.html</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
