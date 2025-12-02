@@ -878,7 +878,8 @@
 .blog-modal.active {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 2rem 0;
 }
 
 .blog-modal-content {
@@ -887,11 +888,13 @@
   border-radius: 20px;
   max-width: 800px;
   width: 90%;
-  margin: 2rem;
+  margin: 2rem auto;
   padding: 3rem;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 255, 255, 0.3);
   animation: modalSlideIn 0.3s ease;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 
 @keyframes modalSlideIn {

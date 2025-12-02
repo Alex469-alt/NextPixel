@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Онлайн-курс английского для взрослых и работы</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Онлайн-курс английского с упором на разговорную практику и реальные задачи: работа, переезд, путешествия, экзамены.">
+  <link rel="stylesheet" href="styleen.css">
+</head>
+<body class="page">
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a href="#top" class="logo" aria-label="Логотип проекта English Online">
+        <span class="logo__mark">EN</span>
+        <span class="logo__text">English Online</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </button>
+
+      <nav class="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#about" class="nav__link">О курсе</a></li>
+          <li class="nav__item"><a href="#format" class="nav__link">Формат</a></li>
+          <li class="nav__item"><a href="#results" class="nav__link">Результаты</a></li>
+          <li class="nav__item"><a href="#exams" class="nav__link">Экзамены</a></li>
+          <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
+          <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+          <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg-layer" aria-hidden="true">
+        <div class="hero-bg-layer__inner">
+          <span class="hero-particle"></span>
+          <span class="hero-particle"></span>
+          <span class="hero-particle"></span>
+          <span class="hero-particle"></span>
+          <span class="hero-particle"></span>
+          <span class="hero-orb hero-orb--1"></span>
+          <span class="hero-orb hero-orb--2"></span>
+          <span class="hero-orb hero-orb--3"></span>
+          <div class="hero-lines">
+            <span class="hero-line hero-line--1"></span>
+            <span class="hero-line hero-line--2"></span>
+            <span class="hero-line hero-line--3"></span>
+            <span class="hero-line hero-line--4"></span>
+          </div>
+        </div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            Онлайн-английский для работы, переезда и живого общения
+          </h1>
+          <p class="hero__subtitle">
+            Помогаем уверенно говорить, понимать живую речь и использовать английский в реальных задачах —
+            с индивидуальным маршрутом и поддержкой преподавателя.
+          </p>
+          <div class="hero__actions">
+            <a href="#level-test" class="btn btn--primary" data-open-modal="callback">
+              Записаться на пробный урок
+            </a>
+            <button class="btn btn--ghost" type="button" data-scroll-target="#programs">
+              Подобрать программу
+            </button>
+          </div>
+          <ul class="hero-benefits" aria-label="Ключевые преимущества курса">
+            <li class="hero-benefits__item">
+              <span class="hero-benefits__icon" aria-hidden="true">◎</span>
+              <span class="hero-benefits__text">Разговорная практика на каждом занятии</span>
+            </li>
+            <li class="hero-benefits__item">
+              <span class="hero-benefits__icon" aria-hidden="true">◎</span>
+              <span class="hero-benefits__text">Индивидуальный маршрут и обратная связь</span>
+            </li>
+            <li class="hero-benefits__item">
+              <span class="hero-benefits__icon" aria-hidden="true">◎</span>
+              <span class="hero-benefits__text">Современная онлайн-платформа и материалы</span>
+            </li>
+            <li class="hero-benefits__item">
+              <span class="hero-benefits__icon" aria-hidden="true">◎</span>
+              <span class="hero-benefits__text">Гибкий график — под работу и личную жизнь</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="hero-offer" aria-label="Краткая информация о формате">
+          <h2 class="hero-offer__title">Формат обучения</h2>
+          <ul class="hero-offer__list">
+            <li class="hero-offer__item">
+              <span class="hero-offer__label">Уровни</span>
+              <span class="hero-offer__value">от A1 до C1</span>
+            </li>
+            <li class="hero-offer__item">
+              <span class="hero-offer__label">Формат</span>
+              <span class="hero-offer__value">1:1 и мини-группы</span>
+            </li>
+            <li class="hero-offer__item">
+              <span class="hero-offer__label">Продолжительность</span>
+              <span class="hero-offer__value">50–60 минут</span>
+            </li>
+            <li class="hero-offer__item">
+              <span class="hero-offer__label">Онлайн</span>
+              <span class="hero-offer__value">из любой точки мира</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </header>
+
+  <main class="page-main">
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="about-title">Онлайн-курс английского под ваши задачи</h2>
+          <p class="section__subtitle">
+            Строим обучение вокруг ваших целей: работа в международной компании, переезд, экзамены,
+            путешествия или уверенное общение в жизни.
+          </p>
+        </div>
+
+        <section class="section section--sub" aria-labelledby="offer-title">
+          <div class="section__header section__header--compact">
+            <h2 class="section__title" id="offer-title">Учиться с выгодой</h2>
+            <p class="section__subtitle">
+              Подберите формат, который подходит по бюджету, темпу и уровню вовлеченности.
+            </p>
+          </div>
+
+          <div class="offer-grid">
+            <article class="offer-card">
+              <h3 class="offer-card__title">Скидка на старт</h3>
+              <p class="offer-card__badge">−20% на первые 4 занятия</p>
+              <p class="offer-card__text">
+                Спокойно познакомьтесь с форматом и преподавателем, прежде чем переходить к регулярным занятиям.
+              </p>
+            </article>
+
+            <article class="offer-card">
+              <h3 class="offer-card__title">Пробный урок</h3>
+              <p class="offer-card__badge">Бесплатно</p>
+              <p class="offer-card__text">
+                Определим текущий уровень, разберём запрос и предложим оптимальную программу обучения.
+              </p>
+            </article>
+
+            <article class="offer-card">
+              <h3 class="offer-card__title">Разговорный клуб</h3>
+              <p class="offer-card__badge">В подарок</p>
+              <p class="offer-card__text">
+                Дополнительная практика в мини-группах: обсуждаем актуальные темы и тренируем спонтанную речь.
+              </p>
+            </article>
+
+            <article class="offer-card">
+              <h3 class="offer-card__title">Бонусные материалы</h3>
+              <p class="offer-card__badge">для самостоятельной работы</p>
+              <p class="offer-card__text">
+                Подборки заданий, полезных фраз и чек-листов, чтобы закреплять материал между занятиями.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="why-title">Почему выбирают нашу онлайн-школу</h2>
+          <p class="section__subtitle">
+            Работаем полностью онлайн, но сохраняем ощущение живого общения, гибкости и персонального подхода.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">⏱</div>
+            <h3 class="feature-card__title">Гибкое расписание</h3>
+            <p class="feature-card__text">
+              Занимайтесь до или после работы, в будни или выходные — подстроим график под вашу нагрузку.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🌍</div>
+            <h3 class="feature-card__title">Носители и русскоязычные</h3>
+            <p class="feature-card__text">
+              Комбинируем занятия с носителями и русскоязычными преподавателями, чтобы было и понятно, и полезно.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🎯</div>
+            <h3 class="feature-card__title">Индивидуальный маршрут</h3>
+            <p class="feature-card__text">
+              План строится от ваших целей: собеседование, переезд, конкретный экзамен или чувство уверенности.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🤝</div>
+            <h3 class="feature-card__title">Живое комьюнити</h3>
+            <p class="feature-card__text">
+              Закрытый чат, разговорные встречи и активность между уроками поддерживают мотивацию.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">💬</div>
+            <h3 class="feature-card__title">Разговорный фокус</h3>
+            <p class="feature-card__text">
+              Больше говорения и практики: минимально «теории ради теории», максимум живых задач и кейсов.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">📈</div>
+            <h3 class="feature-card__title">Измеримый прогресс</h3>
+            <p class="feature-card__text">
+              Отслеживаем рост по чек-листам и мини-тестам, чтобы вы видели реальные изменения в уровне.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="programs-title">Программы обучения</h2>
+          <p class="section__subtitle">
+            Выберите направление под свою задачу — от деловой переписки до переезда и международных экзаменов.
+          </p>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program-card">
+            <h3 class="program-card__title">Бизнес-английский</h3>
+            <p class="program-card__text">
+              Встречи, письма, переговоры и презентации на английском — для специалистов и руководителей.
+            </p>
+            <button class="program-card__btn" type="button" data-open-modal="callback">
+              Выбрать формат
+            </button>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-card__title">Для путешествий</h3>
+            <p class="program-card__text">
+              Отелi, аэропорты, кафе и незапланированные ситуации — чувствуйте себя увереннее в любой стране.
+            </p>
+            <button class="program-card__btn" type="button" data-open-modal="callback">
+              Выбрать формат
+            </button>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-card__title">Для экзаменов</h3>
+            <p class="program-card__text">
+              Структурированная подготовка к международным и вступительным экзаменам по английскому.
+            </p>
+            <button class="program-card__btn" type="button" data-scroll-target="#exams">
+              Подробнее
+            </button>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-card__title">Для переезда</h3>
+            <p class="program-card__text">
+              Фокус на бытовой коммуникации, работе, документах и адаптации в новой стране.
+            </p>
+            <button class="program-card__btn" type="button" data-open-modal="callback">
+              Выбрать формат
+            </button>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-card__title">Для детей и подростков</h3>
+            <p class="program-card__text">
+              Интерактивные уроки, чтобы сделать язык привычной частью учебы и повседневности.
+            </p>
+            <button class="program-card__btn" type="button" data-open-modal="callback">
+              Выбрать формат
+            </button>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-card__title">Индивидуальные занятия</h3>
+            <p class="program-card__text">
+              Максимальная гибкость и внимание к деталям — всё время урока принадлежит только вам.
+            </p>
+            <button class="program-card__btn" type="button" data-open-modal="callback">
+              Выбрать формат
+            </button>
+          </article>
+        </div>
+
+        <section class="section section--sub" aria-labelledby="pricing-title">
+          <div class="section__header section__header--compact">
+            <h2 class="section__title section__title--small" id="pricing-title">Форматы и тарифы</h2>
+          </div>
+
+          <div class="pricing">
+            <div class="pricing-toggle" role="tablist" aria-label="Переключение форматов занятий">
+              <button
+                class="pricing-toggle__btn pricing-toggle__btn--active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-pricing-target="solo"
+              >
+                Индивидуально
+              </button>
+              <button
+                class="pricing-toggle__btn"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-pricing-target="group"
+              >
+                Мини-группа
+              </button>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="pricing-card" data-pricing-panel="solo">
+                <h3 class="pricing-card__title">1:1 с преподавателем</h3>
+                <p class="pricing-card__price">от 2 500 ₽ за занятие</p>
+                <ul class="pricing-card__list">
+                  <li>Маршрут под ваши цели и уровень</li>
+                  <li>Гибкий график и переносы по договоренности</li>
+                  <li>Подробная обратная связь после урока</li>
+                </ul>
+                <button class="btn btn--primary btn--full" type="button" data-open-modal="callback">
+                  Оставить заявку
+                </button>
+              </article>
+
+              <article class="pricing-card pricing-card--hidden" data-pricing-panel="group">
+                <h3 class="pricing-card__title">Мини-группа 3–5 человек</h3>
+                <p class="pricing-card__price">от 1 400 ₽ за занятие</p>
+                <ul class="pricing-card__list">
+                  <li>Живые обсуждения и работа в парах</li>
+                  <li>Сбалансированная нагрузка и поддержка группы</li>
+                  <li>Удобный формат, чтобы не бросать обучение</li>
+                </ul>
+                <button class="btn btn--primary btn--full" type="button" data-open-modal="callback">
+                  Присоединиться
+                </button>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="format" aria-labelledby="format-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="format-title">Как проходят занятия</h2>
+          <p class="section__subtitle">
+            Всё обучение — в одном месте: видеосвязь, материалы, домашние задания и обратная связь.
+          </p>
+        </div>
+
+        <div class="format-grid">
+          <article class="format-item">
+            <h3 class="format-item__title">Интерактивная платформа</h3>
+            <p class="format-item__text">
+              Видео, задания, карточки и тренажёры в одном интерфейсе — ничего не нужно устанавливать.
+            </p>
+          </article>
+
+          <article class="format-item">
+            <h3 class="format-item__title">Программа под ваши цели</h3>
+            <p class="format-item__text">
+              Учитываем запрос, уровень и сроки — разбиваем путь на понятные этапы с измеримыми результатами.
+            </p>
+          </article>
+
+          <article class="format-item">
+            <h3 class="format-item__title">Преподаватели</h3>
+            <p class="format-item__text">
+              Опытные русскоязычные специалисты и носители языка — для баланса комфорта и языковой среды.
+            </p>
+          </article>
+
+          <article class="format-item">
+            <h3 class="format-item__title">Формат уроков</h3>
+            <p class="format-item__text">
+              50–60 минут онлайн: говорение, разбор ошибок, работа с текстами, аудированием и жизненными ситуациями.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="level-test" aria-labelledby="level-test-title">
+      <div class="container level-test">
+        <div class="level-test__content">
+          <h2 class="section__title" id="level-test-title">Определите уровень английского</h2>
+          <p class="section__subtitle">
+            Бесплатно оценим текущий уровень, разберём цели и предложим понятный план обучения.
+          </p>
+
+          <form class="form" data-validate novalidate>
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="test-name">Имя</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="test-name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                >
+                <p class="form__error" data-error-for="name"></p>
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="test-phone">Телефон</label>
+              <input
+                class="form__input"
+                type="tel"
+                id="test-phone"
+                name="phone"
+                inputmode="tel"
+                placeholder="+375 (__) ___-__-__"
+                autocomplete="tel"
+                required
+              >
+              <p class="form__error" data-error-for="phone"></p>
+            </div>
+
+            <button class="btn btn--primary" type="submit">
+              Узнать свой уровень
+            </button>
+
+            <p class="form__note">
+              Отправляя форму, вы подтверждаете, что согласны на обработку контактных данных
+              для связи по вопросам обучения.
+            </p>
+            <p class="form__success" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="results-title">Какие результаты вы получите</h2>
+          <p class="section__subtitle">
+            Реалистичные, измеримые изменения вместо абстрактного «подтянуть английский».
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <h3 class="result-card__title">Начнёте говорить увереннее</h3>
+            <p class="result-card__text">
+              Через несколько месяцев регулярных занятий вы перестанете «застревать» и подбирать слова по минуте.
+            </p>
+          </article>
+
+          <article class="result-card">
+            <h3 class="result-card__title">Повысите общий уровень</h3>
+            <p class="result-card__text">
+              Планомерно пройдёте шаги от текущего уровня к следующему — с промежуточными проверками прогресса.
+            </p>
+          </article>
+
+          <article class="result-card">
+            <h3 class="result-card__title">Сдадите нужный экзамен</h3>
+            <p class="result-card__text">
+              Отработаете формат заданий, стратегии и критерии оценивания, чтобы чувствовать себя увереннее на экзамене.
+            </p>
+          </article>
+
+          <article class="result-card">
+            <h3 class="result-card__title">Используете язык в жизни и работе</h3>
+            <p class="result-card__text">
+              Письма, созвоны, интервью, нетворкинг, путешествия — английский перестанет быть отдельным «учебным» навыком.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="exams" aria-labelledby="exams-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="exams-title">Подготовка к экзаменам</h2>
+          <p class="section__subtitle">
+            Помогаем подготовиться к международным и другим экзаменам по английскому —
+            для учёбы, работы и переезда.
+          </p>
+        </div>
+
+        <div class="exams-layout">
+          <article class="exams-text">
+            <h3 class="exams-text__title">С какими экзаменами работаем</h3>
+            <ul class="exams-text__list">
+              <li>международные экзамены по английскому для учёбы и работы за рубежом</li>
+              <li>экзамены для поступления в зарубежные университеты</li>
+              <li>языковые экзамены для иммиграционных программ</li>
+              <li>внутренние тесты компаний и образовательных программ</li>
+            </ul>
+
+            <h3 class="exams-text__title">В чём фокус подготовки</h3>
+            <ul class="exams-text__list">
+              <li>разбор формата экзамена и критериев оценивания</li>
+              <li>стратегии выполнения заданий и работа со временем</li>
+              <li>отработка письма, чтения, аудирования и устной части</li>
+              <li>тренировка на материалах, близких к реальному экзамену</li>
+            </ul>
+          </article>
+
+          <aside class="exams-cta">
+            <h3 class="exams-cta__title">Начать подготовку</h3>
+            <p class="exams-cta__text">
+              Оставьте контакты, чтобы обсудить ваш экзамен, срок и текущий уровень.
+            </p>
+            <button class="btn btn--primary btn--full" type="button" data-open-modal="callback">
+              Записаться на пробный урок
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="reviews-title">Истории успеха студентов</h2>
+          <p class="section__subtitle">
+            Реальные примеры, как регулярные занятия и понятный план меняют уровень языка и возможности.
+          </p>
+        </div>
+
+        <div class="reviews">
+          <div class="reviews__viewport" aria-live="polite">
+            <article class="review-card review-card--active" data-review-index="0">
+              <p class="review-card__name">Анна, продакт-менеджер</p>
+              <h3 class="review-card__headline">«Перестала бояться созвонов с зарубежной командой»</h3>
+              <p class="review-card__text">
+                Начинали с уровня около A2. За 5 месяцев регулярных занятий Анна стала вести часть звонков сама,
+                подключилась к международным проектам и прошла внутреннее интервью на новую позицию.
+              </p>
+            </article>
+
+            <article class="review-card" data-review-index="1">
+              <p class="review-card__name">Игорь, инженер</p>
+              <h3 class="review-card__headline">«Поднял балл экзамена и переехал»</h3>
+              <p class="review-card__text">
+                Цель была — получить проходной балл для иммиграционной программы. Сфокусировались на письме и speaking,
+                разобрали формат и критерии. Итог — нужный балл и оффер на работу за рубежом.
+              </p>
+            </article>
+
+            <article class="review-card" data-review-index="2">
+              <p class="review-card__name">Мария, специалист по маркетингу</p>
+              <h3 class="review-card__headline">«Начала вести презентации на английском»</h3>
+              <p class="review-card__text">
+                Работали над выступлениями, словарём по нише и уверенностью в голосе.
+                Через несколько месяцев Мария провела первую презентацию для международной аудитории.
+              </p>
+            </article>
+
+            <article class="review-card" data-review-index="3">
+              <p class="review-card__name">Дмитрий, разработчик</p>
+              <h3 class="review-card__headline">«Собеседование в зарубежную компанию без стресса»</h3>
+              <p class="review-card__text">
+                Тренировали ответы на типовые вопросы, фидбэк по произношению и структуре.
+                Дмитрий успешно прошёл интервью и чувствовал себя гораздо спокойнее на звонках.
+              </p>
+            </article>
+          </div>
+
+          <div class="reviews__controls">
+            <button class="reviews__arrow" type="button" aria-label="Предыдущий отзыв" data-reviews-prev>←</button>
+            <div class="reviews__dots" role="tablist" aria-label="Переключение отзывов">
+              <button
+                class="reviews__dot reviews__dot--active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                data-review-dot="0"
+                aria-label="Отзыв 1"
+              ></button>
+              <button
+                class="reviews__dot"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-review-dot="1"
+                aria-label="Отзыв 2"
+              ></button>
+              <button
+                class="reviews__dot"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-review-dot="2"
+                aria-label="Отзыв 3"
+              ></button>
+              <button
+                class="reviews__dot"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                data-review-dot="3"
+                aria-label="Отзыв 4"
+              ></button>
+            </div>
+            <button class="reviews__arrow" type="button" aria-label="Следующий отзыв" data-reviews-next>→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="faq-title">Часто задаваемые вопросы</h2>
+          <p class="section__subtitle">
+            Кратко собрали ответы на вопросы, которые чаще всего возникают перед стартом обучения.
+          </p>
+        </div>
+
+        <div class="faq" role="list">
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Для кого подойдёт курс?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Курс подойдёт взрослым и подросткам, которым нужен английский для работы, учёбы, переезда или
+                свободного общения. Мы подстраиваем программу под уровень и запрос.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Как проходят занятия технически?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Уроки проходят в онлайн-формате: вы переходите по ссылке, подключаетесь к видеозвонку и работаете
+                в интерактивной среде с материалами и доской.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Что если пропустить занятие?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Правила зависят от выбранного тарифа, но в большинстве случаев можно перенести урок,
+                предупредив заранее. Детали фиксируются в договорённости с преподавателем.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Сколько времени нужно закладывать на обучение?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Минимум — одно занятие в неделю, но оптимально 2–3 урока плюс короткая самостоятельная практика.
+                Мы помогаем встроить английский в график, а не перегрузить его.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Можно ли совмещать курс с работой или учёбой?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Да, формат изначально рассчитан на занятых людей. Вы выбираете удобное время, а нагрузку
+                адаптируем под ваш график.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Есть ли пробный урок?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Да, пробное занятие помогает понять ваш уровень, формат и совместимость с преподавателем,
+                прежде чем принимать решение о длительном обучении.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq__item" data-faq-item>
+            <button class="faq__question" type="button" aria-expanded="false">
+              <span class="faq__question-text">Что если я давно не занимался и «забыл всё»?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer" hidden>
+              <p>
+                Это нормальная ситуация. Мы начинаем с диагностики, освежаем базу и постепенно выходим на уровень,
+                на котором вы сможете уверенно использовать язык.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts">
+        <div class="contacts__info">
+          <h2 class="section__title" id="contacts-title">Присоединиться к курсу</h2>
+          <p class="section__subtitle">
+            Оставьте заявку — мы свяжемся, чтобы обсудить цели, формат и ближайшие свободные слоты.
+          </p>
+
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <span class="contacts__label">Email</span>
+              <a href="mailto:hello@example.com" class="contacts__value">hello@example.com</a>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__label">Телефон</span>
+              <a href="tel:+79999999999" class="contacts__value">+7 (999) 999-99-99</a>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__label">Мессенджеры</span>
+              <span class="contacts__value">Telegram / WhatsApp — по запросу</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contacts__form-wrapper">
+          <form class="form" data-validate novalidate>
+            <div class="form__field">
+              <label class="form__label" for="contact-name">Имя</label>
+              <input
+                class="form__input"
+                type="text"
+                id="contact-name"
+                name="name"
+                required
+              >
+              <p class="form__error" data-error-for="name"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="contact-message">Сообщение или комментарий</label>
+              <textarea
+                class="form__input form__input--textarea"
+                id="contact-message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+              <p class="form__error" data-error-for="message"></p>
+            </div>
+
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" name="consent" required>
+              <span class="checkbox__box" aria-hidden="true"></span>
+              <span class="checkbox__label">
+                Я согласен(а) на использование моих контактных данных для связи по курсу.
+              </span>
+            </label>
+            <p class="form__error form__error--checkbox" data-error-for="consent"></p>
+
+            <button class="btn btn--primary btn--full" type="submit">
+              Оставить заявку
+            </button>
+            <p class="form__success" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="callback" aria-hidden="true">
+      <div class="callback__overlay" data-modal-close></div>
+      <div class="callback__dialog" role="dialog" aria-modal="true" aria-labelledby="callback-title">
+        <button class="callback__close" type="button" data-modal-close aria-label="Закрыть форму">
+          ×
+        </button>
+        <h2 class="section__title" id="callback-title">Оставьте номер телефона</h2>
+        <p class="section__subtitle">
+          Мы перезвоним, чтобы ответить на вопросы и подобрать удобный формат обучения. Звонки и сообщения — только по делу, без спама.
+        </p>
+        <form class="form form--compact" data-validate data-modal-form novalidate>
+          <div class="form__field">
+            <label class="form__label" for="callback-phone">Номер телефона (Республика Беларусь)</label>
+            <input
+              class="form__input"
+              type="tel"
+              id="callback-phone"
+              name="phone"
+              inputmode="tel"
+              placeholder="+375 (__) ___-__-__"
+              autocomplete="tel"
+              required
+            >
+            <p class="form__error" data-error-for="phone"></p>
+          </div>
+          <button class="btn btn--primary btn--full" type="submit">
+            Жду звонка
+          </button>
+          <p class="form__note">
+            Указывая номер, вы соглашаетесь на обратный звонок или сообщение по WhatsApp / Telegram.
+          </p>
+          <p class="form__success" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__about">
+        <p class="site-footer__title">English Online</p>
+        <p class="site-footer__text">
+          Онлайн-проект по обучению английскому для работы, переезда и уверенного общения.
+        </p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Ссылки в подвале">
+        <a href="#top" class="site-footer__link">Наверх</a>
+        <a href="#" class="site-footer__link">Договор оферты</a>
+        <a href="#" class="site-footer__link">Политика конфиденциальности</a>
+        <a href="#" class="site-footer__link">Блог о языке</a>
+      </nav>
+
+      <p class="site-footer__copy">
+        © <span id="current-year"></span> English Online. Все права на материалы — у авторов проекта.
+      </p>
+    </div>
+  </footer>
+
+  <script src="en.js"></script>
+</body>
+</html>
+
+

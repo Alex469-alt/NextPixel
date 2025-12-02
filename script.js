@@ -1495,6 +1495,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
       }
     });
+
+    // Поддержка touch событий для мобильных устройств
+    card.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      const modalId = this.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
   });
 
   // Закрытие модального окна при клике на кнопку закрытия
